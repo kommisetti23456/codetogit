@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            box-sizing: border-box;
+            padding:0;
+        }
+        body{
+            background-color: yellow;
+
+        }
+        h1{
+            color:white;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .container{
+            text-align: center;
+            color:white;
+            background-color: aqua;
+            
+            width:50%;
+            margin-left: 400px;
+            height:200px;
+            border-radius: 10px;
+            
+            
+            
+        }
+        .text{
+            padding:40px;
+            margin:20px;
+            border-radius: 10px;
+            
+        }
+    
+ 
+
+
+        
+  
+    </style>
+    </head>
+    <body>
+        <h1>word counter</h1>
+        <div class="container">
+            <textarea name="next" class="text" placeholder="enter words" oninput="upcount()" id="texts"></textarea>
+<p>
+    <span id="wcount">0</span>words
+    |
+    <span id="ccount">0</span>letters
+</p>
+
+        </div>
+
+
+   
+    
+    
+</body>
+<script>
+    const upcount=()=>{
+let tex=document.getElementById("texts").value
+let word=(tex).split(' ').length;
+document.getElementById("wcount").innerHTML=word;
+document.getElementById("ccount").innerHTML=tex.length;
+
+    }
+</script>
+</html>
+ 

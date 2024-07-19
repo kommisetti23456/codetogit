@@ -1,0 +1,131 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+box-sizing: border-box;
+padding:0;
+margin:0;
+        }
+        button{
+            padding:10px 20px;
+            background-color: black;
+            text-align: center;
+            margin:auto;
+            color:white;
+            border-radius: 15px;
+        }
+        .wrapper{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height:50vh;
+            gap:50px;
+            padding:20px;
+        }
+        .input,.output{
+            border:4px solid gray;
+            width:49%;
+            height:100%;
+            overflow-y: auto;
+            min-height: 500px;
+        }
+        #but{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+
+    </style>
+</head>
+<body>
+    <button id="but">run</button>
+    <div class="wrapper">
+        <textarea class="input"></textarea>
+        <iframe class="output"></iframe>
+    </div>
+
+    
+</body>
+<script>
+    let input=document.querySelector("input");
+    let output=document.querySelector("output")
+    let btn=document.getElementById("but")
+    btn.onClick=execute;
+    function execute(){
+        let code=input.value;
+        output.contentWindow.document.body.innerHTML=code;
+        
+    }
+</script>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: black;
+            text-align: center;
+            margin: auto;
+            color: white;
+            border-radius: 15px;
+            cursor: pointer; /* Add cursor pointer for better usability */
+        }
+        .wrapper {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 50vh;
+            gap: 50px;
+            padding: 20px;
+        }
+        .input, .output {
+            border: 4px solid gray;
+            width: 49%;
+            height: 100%;
+            overflow-y: auto;
+            min-height: 500px;
+            padding: 10px; /* Add padding for better appearance */
+            font-size: 16px; /* Set a reasonable font size */
+        }
+        #but {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <button id="but">run</button>
+    <div class="wrapper">
+        <textarea class="input"></textarea>
+        <iframe class="output"></iframe>
+    </div>
+
+    <script>
+        let input = document.querySelector(".input"); // Corrected selector to match class
+        let output = document.querySelector(".output"); // Corrected selector to match class
+        let btn = document.getElementById("but");
+
+        btn.addEventListener("click", execute); // Changed to use addEventListener for click event
+
+        function execute() {
+            let code = input.value;
+            output.contentDocument.body.innerHTML = code; // Access contentDocument to set innerHTML
+        }
+    </script>
+</body>
+</html>

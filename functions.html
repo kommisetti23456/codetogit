@@ -1,0 +1,169 @@
+{<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function greet(){
+        console.log("hello world")
+    }
+    greet();
+    function hello(first,last){
+        console.log("hello"+first+" "+last)
+    }
+    hello("ammulu","sahi",200)
+    hello("ammulu")
+    // default parameters
+    function sum(x,y=20){
+        console.log(x+y)
+    }
+    sum(10)
+    // nested  function
+    function outer(){
+        let count=10
+        console.log("outer function")
+        function inner(msg){
+            console.log("value of count"+count)
+            // return msg;
+        }
+        count++
+      return  inner
+    }
+    
+   let inner= outer();
+//    console.log(inner('hello world'))
+   inner()
+   function counter(){
+    let count=0;
+    return function(){
+    return (count+=1);
+    
+   };
+
+}
+   
+   const inc=counter();
+   console.log(inc());
+// //    scope
+ var x="hello"
+ function example(){
+     console.log(x)
+ }
+ example();
+ console.log(x)
+// // functional scope
+ function examples(){
+     var fs="hello"
+     console.log(x)
+ }
+ examples()
+//  console.log(fs)
+ // block scope
+ function hello(){
+     if(true){
+         let abc="hello world"
+         console.log(abc)
+     }
+// console.log(abc)
+     
+ }
+ hello();
+//  control statments
+let age=20;
+if(age>18){
+    console.log("eligible for vote")
+}
+let ages=20;
+let con="india"
+
+
+if(age>=18&&con=="india"){
+    console.log("hello world")
+}
+let agess=45
+if(age>18){
+    console.log('you are child')
+}
+else{
+    console.log("minor")
+}
+// else if
+let helloo=19;
+if(helloo>=16){
+  console.log('you are adult')  
+}
+else if(hello0>=16){
+    console.log('you are child')
+}
+else{
+    console.log("you are minor")
+}
+// switch great 
+let value=2;
+switch(value){
+    case 1:
+        value="sunday"
+        break;
+        case 2:
+            value="monday"
+            break;
+            case 3:
+                value="tuesday"
+                break;
+}
+console.log(value)
+// for loop
+  for
+  (let i=0;i<10;i++){
+      console.log("great stack");
+  }
+ let code=["javascript","python","css"]
+ for(let i=0;i<code.length;i++){
+    console.log(code[i])
+
+
+ }
+//      for(let i=1;i<=5;i++){
+//  console.log(i)
+//      for(let j=1;j<=3;j++){
+//          console.log("innerloop" +j)
+//      }
+
+//  }
+// // // while
+//  let i=0;
+//  while(i<10){
+//     console.log("hello")
+//      i++
+//  }
+// // // do while
+//  let p=1
+//  do{
+//      console.log(p)
+//      p++;
+    
+//  }while(p<=5)
+
+
+
+
+
+    
+
+
+
+
+
+
+    
+    
+
+  </script>
+    
+  </body>
+  </html>
+    
+ }

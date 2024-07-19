@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: palegreen;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 500px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 7px;
+            padding: 20px;
+            text-align: center;
+        }
+        button {
+            background-color: paleturquoise;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .qrcode {
+            margin-top: 20px;
+        }
+        #qrcode {
+            width: 200px;
+            height: 200px;
+        }
+        .container.active {
+            height: 530px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="qr">QR Code Generator</h1>
+        <input type="text" placeholder="Enter Text" id="input">
+        <button id="hello">Generate QR Code</button>
+        <div class="qrcode">
+            <img src="" alt="QR Code" id="qrcode">
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let input = document.getElementById("input");
+            let btn = document.getElementById("hello");
+            let img = document.getElementById("qrcode");
+            let container = document.querySelector(".container");
+
+            let preinput;
+
+            btn.addEventListener("click", function() {
+                let inputValue = input.value.trim();
+                if (!inputValue || inputValue === preinput) {
+                    return;
+                } else {
+                    preinput = inputValue;
+                    btn.innerText = "Generating QR Code...";
+                    img.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(inputValue)}`;
+                    img.onload = function() {
+                        container.classList.add("active");
+                        btn.innerText = "Generate QR Code";
+                    };
+                }
+            });
+        });
+    </script>
+</body>
+</html>

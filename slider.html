@@ -1,0 +1,96 @@
+  --><!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: rgb(222, 210, 210);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+            .slider {
+                position: relative;
+            }
+            #left, #right {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 40px;
+                height: 40px;
+                background-color: blue;
+                border-radius: 50%;
+                color: white;
+                font-size: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+            #left {
+                left: 10px;
+            }
+            #right {
+                right: 10px;
+            }
+            #image {
+                width: 50%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slider">
+            <div id="left">&lt;</div>
+            <img src="images/image1.jpg" id="image">
+            <div id="right">&gt;</div>
+        </div>
+        
+        <script>
+            let images = ["image1.jpg", "image2.jpg", "image3.jpg", "image4.jpg"];
+            let imageInd = 0; // Start with the first image
+    
+            let leftButton = document.getElementById("left");
+            let rightButton = document.getElementById("right");
+            let imageElement = document.getElementById("image");
+    
+            leftButton.onclick = function() {
+                imageInd--;
+                if (imageInd <= 0) {
+                    leftButton.style.display = 'none';
+                    imageInd = 0;
+                } else {
+                    rightButton.style.display = 'block';
+                }
+                imageElement.setAttribute('src', 'images/' + images[imageInd]);
+            };
+    
+            rightButton.onclick = function() {
+                imageInd++;
+                if (imageInd >= images.length - 1) {
+                    rightButton.style.display = 'none';
+                    imageInd = images.length - 1;
+                } else {
+                    leftButton.style.display = 'block';
+                }
+                imageElement.setAttribute('src', 'images/' + images[imageInd]);
+            };
+    
+            // Initially hide left button if on first image
+            if (imageInd === 0) {
+                leftButton.style.display = 'none';
+            }
+        </script>
+    </body>
+    </html>
+    

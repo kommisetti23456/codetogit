@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <!-- get element bt id -->
+        <p id="para">javascript dom</p></div>
+        <p id="para">javascript manipulation</p>
+        <!-- tagname -->
+<h1>first heading</h1>
+<h1>second heading</h1>
+<h1>third heading</h1>
+<h1>fourth heading</h1>
+<!-- classname -->
+<h1 class="msg">first heading</h1>
+<div id="cont">
+<h1 class="msg">second heading</h1> 
+<h1 class="msg">third heading</h1>
+</div>
+<!-- query selector --> <!--name  -->
+       <input type="radio" name="lan" type="css">
+
+       <!-- traversing elements --
+        <div class="title">
+        <p class="text">hello world</p>
+        <p>great stack1</p>   <p class="first">great stack 2</p>    <P>great stack 3</P>
+        <p>great stack 4</p></div>
+<script>
+        let msg=document.getElementById("para")
+ console.log(msg)
+         let btn=document.getElementsByName("lan")
+         console.log(btn)
+         let head=document.getElementsByTagName("h1")
+ console.log(head)
+let ms=document.getElementById("cont")
+let contain=ms.getElementsByClassName("msg")
+console.log(contain)
+let cla=document.querySelector(".msg")
+     console.log(cla)
+     let clad=document.querySelectorAll(".msg")
+console.log(clad)
+ let msgs=document.getElementById("cont")
+let abs=msgs.querySelectorAll(".msg")
+console.log(abs)
+let map=document.querySelectorAll("div,h1")
+console.log(map)
+let txt=document.querySelector(".text")
+console.log(txt.parentNode)
+let say=document.querySelector(".title")
+console.log(say.firstElementChild)
+console.log(say.lastElementChild)
+console.log(say.childNodes)
+let sec=document.querySelector(".first")
+console.log(sec.previousElementSibling)
+console.log(sec.nextelementSibling)
+ <!-- break -->
+ -->
+ for(let i=1;i<5;i++){
+if(i==3{
+        break;continue
+} console.log(i))
+ }
+
+
+
+     </script>
+    
+</body>
+</html>

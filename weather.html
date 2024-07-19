@@ -1,0 +1,109 @@
+
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-color: paleturquoise;
+        }
+        .search {
+            width: 400px;
+            height: 500px;
+            background-color: white;
+            position: relative;
+            border-radius: 15px;
+            padding: 75px;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 70px;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+        }
+        .images {
+            position: absolute;
+            top: 30%;
+            left: 45%;
+            margin-top: 35px;
+        }
+        .tet, .text {
+            margin-top: 35px;
+        }
+        .temp, .city, .desc {
+            margin-top: 25px;
+        }
+    </style>
+
+    
+    
+     
+         
+ </head>
+ <body>
+     
+     <div class="container">
+         <div class="search">
+             <h1>Weather App</h1>
+             <input type="text" placeholder="location" class="tet">
+             <button class="text">Get</button>
+         </div>
+         <div class="images">
+             <img src="images/cloud.png">
+             <h3 class="temp">25°C</h3>
+             <h5 class="desc">Cloudy</h5>
+             <h3 class="city">Hyderabad</h3>
+         </div>
+     </div>
+ 
+     <script>
+         document.addEventListener('DOMContentLoaded', function() {
+             let btn = document.querySelector(".text");
+             let inp = document.querySelector(".tet");
+             let temp = document.querySelector(".temp");
+             let city = document.querySelector(".city");
+             let desc = document.querySelector(".desc");
+ 
+             btn.addEventListener('click', function() {
+                 if (inp.value === "") {
+                     alert("Please enter the location");
+                 } else {
+                     let loc = inp.value;
+                     let url = `https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=aa26455e25de031093f1de6836f37325`;
+ 
+                     fetch(url)
+                         .then(response => response.json())
+                         .then(data => {
+                             console.log(data);
+                             const { name } = data;
+                             const { feels_like } = data.main;
+                             const { description } = data.weather[0];
+                             
+                             temp.innerText = Math.floor(feels_like - 273) + "°C";
+                             city.innerText = name;
+                             desc.innerText = description;
+                         })
+                         .catch(() => {
+                             alert("Enter valid location");
+                             inp.value = "";
+                         });
+                 }
+             });
+         });
+     </script>
+     
+ </body>
+ </html>
+ 

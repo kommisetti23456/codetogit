@@ -1,0 +1,94 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    background-color: blue;
+    height:100vh;
+}
+h1{
+    color:white;
+    margin:20px;
+}
+.container{
+    background-color: white;
+    border-radius: 10px;
+    
+    width:500px;
+    height:250px;
+}
+
+h2{
+    padding:10px;
+    text-transform: capitalize;
+    font-size:20px;
+}
+ul{
+    list-style-type: none;
+
+}
+ul li{
+    margin:10px  10px;
+    
+}
+ul li label{
+    cursor:pointer;
+}
+.actions{
+    display:flex;
+    justify-content:center;
+  gap:10px; 
+     padding:10px; 
+
+}
+.actions button{
+    background-color: blue;
+    border:none;
+    color:white;
+    cursor:pointer;
+    font-size:20px;
+    padding:10px;
+    
+
+
+}
+#previous{
+    background-color: darkcyan;
+    width:300px;
+}
+ #submit{
+    display: none;
+    width:300px;
+}
+#next{
+    width:300px;
+}
+.result{
+    display:none;
+    background-color: white;
+    width:500px;
+    height:100px;
+}
+.action{
+    margin:10px 0;
+    gap:20px;
+    }
+#load{
+    background-color: aqua;
+    width:100px;
+    height:30px;
+}
+#ans{
+    background-color: blue;
+    width:100px;
+    height:30px;
+    margin-left:10px;
+}
+.correct{
+    background-color: green;
+    padding: 0 20px;
+}
